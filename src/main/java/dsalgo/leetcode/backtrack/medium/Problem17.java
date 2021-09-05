@@ -1,4 +1,4 @@
-package dsalgo.backtrack.medium;
+package dsalgo.leetcode.backtrack.medium;
 
 import java.util.ArrayList;
 import java.util.List;

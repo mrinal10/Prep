@@ -1,9 +1,7 @@
-package dsalgo.backtrack.medium;
+package dsalgo.leetcode.backtrack.medium;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Problem39 {
     List<List<Integer>> path;

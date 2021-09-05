@@ -1,4 +1,4 @@
-package dsalgo.linkedlist;
+package dsalgo.leetcode.linkedlist;
 
 class problem141 {
 

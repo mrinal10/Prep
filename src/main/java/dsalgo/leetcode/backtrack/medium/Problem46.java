@@ -1,4 +1,4 @@
-package dsalgo.backtrack.medium;
+package dsalgo.leetcode.backtrack.medium;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +27,6 @@ public class Problem46 {
                swap(arr, l, i);
            }
        }
-
-
     }
 
     private void swap(int[] arr, int i, int j) {
