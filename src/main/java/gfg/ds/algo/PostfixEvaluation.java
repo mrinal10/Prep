@@ -1,6 +1,5 @@
-package dsalgo.gfg;
+package gfg.ds.algo;
 
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class PostfixEvaluation {

@@ -1,4 +1,4 @@
-package dsalgo.gfg;
+package gfg.ds.algo.todo;
 
 public class Sort012 {
 
