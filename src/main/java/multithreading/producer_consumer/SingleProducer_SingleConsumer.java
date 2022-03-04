@@ -1,46 +1,69 @@
 package multithreading.producer_consumer;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
-class Producer implements Runnable{
-    private List<String> buffer;
+class Producer {
+    LinkedList<Integer> jobList = new LinkedList<>();
+    int capacity;
 
-    public Producer(List<String> buffer) {
-        this.buffer = buffer;
+    Producer(LinkedList<Integer> jobList, int cap) {
+        this.jobList = jobList;
+        capacity = cap;
     }
+    public void produce() throws InterruptedException {
+        int value = 0;
+        while (true) {
+            synchronized (this) {
+                // producer thread waits while list
+                // is full
+                while (jobList.size() == capacity) {
+                    notify();
+                    wait();
+                }
 
+                System.out.println("Producer produced-" + value);
 
-    @Override
-    public void run() {
-        int i = 1;
-        while(true) {
-            buffer.add(i+"");
-            i++;
-            System.out.println(Thread.currentThread().getName()+" added "+i);
+                // to insert the jobs in the list
+                jobList.add(value++);
+
+                // notifies the consumer thread that
+                // now it can start consuming
+                notify();
+
+                // makes the working of program easier
+                // to  understand
+                Thread.sleep(1000);
+            }
         }
     }
 }
 
-class Consumer implements Runnable{
-    private List<String> buffer;
+class Consumer {
+    LinkedList<Integer> jobList = new LinkedList<>();
 
-    public Consumer(List<String> buffer) {
-        this.buffer = buffer;
+    Consumer(LinkedList<Integer> jobList) {
+        this.jobList = jobList;
     }
 
-    @Override
-    public void run() {
+    public void consume() throws InterruptedException {
 
-        while (true){
-            if (buffer.isEmpty()){
-                continue;
-            }
-            if (buffer.get(0).equals(Driver.EOF)){
-                System.out.println(Thread.currentThread().getName()+" exiting.");
-                break;
-            } else {
-                System.out.println(Thread.currentThread().getName()+ " removed " +buffer.remove(0));
+        while (true) {
+            synchronized (this) {
+                // consumer thread waits while list
+                // is empty
+                while (jobList.size() == 0)
+                    wait();
+
+                // to retrieve the first job in the list
+                int val = jobList.removeFirst();
+
+                System.out.println("Consumer consumed-" + val);
+
+                // Wake up producer thread
+                notify();
+
+                // and sleep
+                Thread.sleep(1000);
             }
         }
     }
@@ -49,22 +72,41 @@ class Consumer implements Runnable{
 
 class Driver {
 
-    public static final String EOF = "EOF";
+    public static void main(String[] args) throws InterruptedException {
 
-    public static void main(String[] args) {
-        List<String> buffer = new ArrayList<>();
+        LinkedList<Integer> jobList = new LinkedList<>();
+        int capacity = 2;
+        Producer producer = new Producer(jobList, capacity);
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run()
+            {
+                try {
+                    producer.produce();
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
-        Thread producerThread = new Thread(new Producer(buffer));
-        producerThread.setName("producerThread");
+        // Create consumer thread
+        Consumer consumer = new Consumer(jobList);
+        Thread c1 = new Thread(new Runnable() {
+            @Override
+            public void run()
+            {
+                try {
+                    consumer.consume();
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
-        Thread consumerThread1 = new Thread(new Consumer(buffer));
-        consumerThread1.setName("consumerThread1");
-
-        Thread consumerThread2 = new Thread(new Consumer(buffer));
-        consumerThread2.setName("consumerThread2");
-
-        producerThread.start();
-        consumerThread1.start();
-        consumerThread2.start();
+        t1.start();
+        c1.start();
     }
+
 }
