@@ -14,9 +14,15 @@ public class Print_1to10_Two_Thread {
                             e.printStackTrace();
                         }
                     }
-                    System.out.println("Odd Print:"+counter);
+                    try {
+                        System.out.println("Odd Print:"+counter);
+                        Thread.sleep(500);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                     counter++;
-                    notify();
+                    notifyAll();
                 }
             }
         }
@@ -31,30 +37,27 @@ public class Print_1to10_Two_Thread {
                             e.printStackTrace();
                         }
                     }
-                    System.out.println("Even Print:"+counter);
+                    try {
+                        System.out.println("Even Print:"+counter);
+                        Thread.sleep(500);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     counter++;
-                    notify();
+                    notifyAll();
                 }
             }
         }
 
         public static void main(String[] args) {
-            N = 10;
+            N = 100;
             Print_1to10_Two_Thread mt = new Print_1to10_Two_Thread();
 
-            Thread oddThread = new Thread(new Runnable() {
-                public void run() {
-                    mt.printEvenNumber();
-                }
-            });
+            Thread oddThread = new Thread(mt::printEvenNumber);
 
-            Thread eventThread = new Thread(new Runnable() {
-                public void run() {
-                    mt.printOddNumber();
-                }
-            });
+            Thread evenThread = new Thread(mt::printOddNumber);
 
             oddThread.start();
-            eventThread.start();
+            evenThread.start();
         }
     }
