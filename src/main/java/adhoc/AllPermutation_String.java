@@ -4,7 +4,6 @@ public class AllPermutation_String {
     public static void main(String[] args)
     {
         String str = "ABC";
-        int n = str.length();
         AllPermutation_String permutation = new AllPermutation_String();
         permutation.permute(str, 0);
     }

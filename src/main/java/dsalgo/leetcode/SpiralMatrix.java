@@ -1,4 +1,4 @@
-package adhoc;
+package dsalgo.leetcode;
 
 //Input: 10 -5 -6 1 3 -2 20 -10 30
 //output: -5 -6 -2 -10 10 1 3 20 30
@@ -8,7 +8,7 @@ package adhoc;
 // k l m n o
 
 //a b c d e j o n m l k f
-public class SNowTest {
+public class SpiralMatrix {
 
     private static void print(char[][] matrix) {
 
@@ -16,7 +16,7 @@ public class SNowTest {
         int col = matrix[0].length;
 
         int r = 0;
-        int r2 = row-1;
+        int r2 = row - 1;
 
         int c = 0;
         int c2 = col - 1;
