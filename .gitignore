@@ -2,3 +2,11 @@
 /.gradle/
 /build/
 /build/classes/java/main/
+/bin/
+*.xml
+*.pb
+.idea/sonarlint/issuestore/*
+.idea/sonarlint/issuestore/3/0/3029eb11638cb25bae505f33cb8bb75817cd92bc
+.idea/*
+.idea/sonarlint/issuestore/1/5/15618b4c612761757aea590399ad2e22f65f368b
+.idea/runConfigurations.xml

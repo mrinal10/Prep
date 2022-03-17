@@ -1,6 +1,4 @@
-package dsalgo.linkedlist;
-
-import java.util.LinkedList;
+package dsalgo.leetcode.linkedlist;
 
 public class Problem142 {
     private ListNode head;
