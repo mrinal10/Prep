@@ -1,4 +1,4 @@
-package linkedlist;
+package important450.linkedlist;
 
 public class RandomNode {
     int data;

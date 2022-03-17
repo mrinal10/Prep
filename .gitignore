@@ -2,6 +2,7 @@
 /.gradle/
 /build/
 /build/classes/java/main/
+/bin/
 *.xml
 *.pb
 .idea/sonarlint/issuestore/*
