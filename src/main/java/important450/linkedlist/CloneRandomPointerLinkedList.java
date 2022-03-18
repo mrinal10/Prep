@@ -6,16 +6,16 @@ public class CloneRandomPointerLinkedList {
         RandomNode cur = head;
 
         while(cur!=null) {
-            RandomNode newNode = new RandomNode(cur.data);
+            RandomNode newNode = new RandomNode(cur.val);
             newNode.next = cur.next;
-            newNode.arb = cur.arb;
+            newNode.random = cur.random;
             cur.next = newNode;
             cur = cur.next.next;
         }
 
         cur = head;
         while(cur!=null) {
-            cur.next.arb = cur.next.arb.next;
+            cur.next.random = cur.next.random.next;
             cur = cur.next.next;
         }
 
@@ -38,14 +38,12 @@ public class CloneRandomPointerLinkedList {
         one.next = two;
         two.next = three;
 
-        head.arb = two;
-        two.arb = three;
-        three.arb = one;
-        one.arb = two;
+        head.random = two;
+        two.random = three;
+        three.random = one;
+        one.random = two;
 
         CloneRandomPointerLinkedList cpl = new CloneRandomPointerLinkedList();
-        RandomNode newNode = cpl.copyList(head);
-
         System.out.println("test");
     }
 }
