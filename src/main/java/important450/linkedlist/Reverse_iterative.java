@@ -11,6 +11,7 @@ public class Reverse_iterative {
             next = cur.next;
             cur.next = prev;
             prev = cur;
+
             cur = next;
         }
 
