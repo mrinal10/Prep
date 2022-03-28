@@ -30,6 +30,8 @@ public class Leetcode1326 {
         return ans;
     }
 
+    
+
     public static void main(String[] args) {
         int[] range = {3,4,1,1,0,0};
         Leetcode1326 leetcode1326 = new Leetcode1326();
