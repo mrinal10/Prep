@@ -51,10 +51,11 @@ public class LRUCache {
         return res;
     }
 
-    private Map<Integer, DLinkedNode> cache = new HashMap<>();
+    private final Map<Integer, DLinkedNode> cache = new HashMap<>();
     private int size;
-    private int capacity;
-    private DLinkedNode head, tail;
+    private final int capacity;
+    private final DLinkedNode head;
+    private final DLinkedNode tail;
 
     public LRUCache(int capacity) {
         this.size = 0;

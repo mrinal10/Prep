@@ -3,7 +3,7 @@ package important450.dynamic_programming;
 public class Knapsack_0_1 {
 
     //DP approach
-    static int knapSackDp(int W, int wt[], int val[], int n) {
+    static int knapSackDp(int W, int[] wt, int[] val, int n) {
         int[][] dp = new int[n+1][W+1];
 
         for (int i=0; i<=n; i++) {
@@ -22,7 +22,7 @@ public class Knapsack_0_1 {
     }
 
     //recursive approach
-    static int knapSack(int W, int wt[], int val[], int n) {
+    static int knapSack(int W, int[] wt, int[] val, int n) {
         if (n == 0 || W == 0)
             return 0;
 

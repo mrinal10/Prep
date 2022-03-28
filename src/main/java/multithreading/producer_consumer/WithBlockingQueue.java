@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 
 class ProducerImpl implements Runnable {
 
-    private BlockingQueue<Integer> queue;
+    private final BlockingQueue<Integer> queue;
     private volatile int index;
 
     public ProducerImpl(BlockingQueue q, int ii){

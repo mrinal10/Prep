@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 public class MaximumSumIncreasingSubsequence {
 
-    public int maxSumIS(int arr[], int n) {
+    public int maxSumIS(int[] arr, int n) {
 
         return 0;
     }

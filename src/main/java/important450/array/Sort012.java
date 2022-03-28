@@ -1,7 +1,7 @@
 package important450.array;
 
 public class Sort012 {
-    public static void sort012(int a[], int n) {
+    public static void sort012(int[] a, int n) {
 
         int smallerIndex = 0;
         int largerIndex = n-1;

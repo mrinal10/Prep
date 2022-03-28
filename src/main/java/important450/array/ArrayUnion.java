@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class ArrayUnion {
-    public static int doUnion(int a[], int n, int b[], int m) {
+    public static int doUnion(int[] a, int n, int[] b, int m) {
         Set<Integer> set = new TreeSet<>();
         for(int i=0; i<a.length; i++) {
            set.add(a[i]);

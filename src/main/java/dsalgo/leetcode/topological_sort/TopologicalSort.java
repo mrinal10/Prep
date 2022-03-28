@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class TopologicalSort {
 
-    private int V;
+    private final int V;
 
-    private ArrayList<ArrayList<Integer>> adjacencyList;
+    private final ArrayList<ArrayList<Integer>> adjacencyList;
 
     TopologicalSort(int v) {
         V = v;

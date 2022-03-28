@@ -2,13 +2,13 @@ package design;
 
 interface HousePlan
 {
-    public void setBasement(String basement);
+    void setBasement(String basement);
 
-    public void setStructure(String structure);
+    void setStructure(String structure);
 
-    public void setRoof(String roof);
+    void setRoof(String roof);
 
-    public void setInterior(String interior);
+    void setInterior(String interior);
 }
 
 class House implements HousePlan
@@ -45,19 +45,19 @@ class House implements HousePlan
 interface HouseBuilder
 {
 
-    public void buildBasement();
+    void buildBasement();
 
-    public void buildStructure();
+    void buildStructure();
 
-    public void buildRoof();
+    void buildRoof();
 
-    public void buildInterior();
+    void buildInterior();
 
-    public House getHouse();
+    House getHouse();
 }
 
 class IglooHouseBuilder implements HouseBuilder {
-    private House house;
+    private final House house;
 
     public IglooHouseBuilder()
     {
@@ -92,7 +92,7 @@ class IglooHouseBuilder implements HouseBuilder {
 
 class TipiHouseBuilder implements HouseBuilder
 {
-    private House house;
+    private final House house;
 
     public TipiHouseBuilder()
     {
@@ -129,7 +129,7 @@ class TipiHouseBuilder implements HouseBuilder
 class CivilEngineer
 {
 
-    private HouseBuilder houseBuilder;
+    private final HouseBuilder houseBuilder;
 
     public CivilEngineer(HouseBuilder houseBuilder)
     {

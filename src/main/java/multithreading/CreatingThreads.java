@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Producer implements Runnable {
-    private List<String> jobList;
-    private int limitOfJobs;
+    private final List<String> jobList;
+    private final int limitOfJobs;
     Producer (List<String> jobList, int maxNumberOfJobs) {
         this.jobList = jobList;
         limitOfJobs = maxNumberOfJobs;
@@ -29,7 +29,7 @@ class Producer implements Runnable {
 }
 
 class Consumer implements Runnable {
-    private List<String> jobList;
+    private final List<String> jobList;
     Consumer (List<String> jobList) {
         this.jobList = jobList;
     }

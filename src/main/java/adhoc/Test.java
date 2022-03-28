@@ -13,7 +13,7 @@ class Employee{
     }
 
     public String toString() {
-        return String.valueOf(id) + "-" + name;
+        return id + "-" + name;
     }
 }
 

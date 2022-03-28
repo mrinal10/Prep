@@ -18,7 +18,7 @@ public class longestsubstringwithbnonrepeatingChars {
         DateTimeFormatter df = DateTimeFormatter.ofPattern("d-MMM-yyyy");
         LocalDateTime d1 = LocalDateTime.parse(date1, df);
 
-        System.out.println(d1.toString());
+        System.out.println(d1);
         return 0;
     }
 }

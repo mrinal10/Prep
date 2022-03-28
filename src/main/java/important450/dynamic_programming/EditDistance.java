@@ -29,7 +29,7 @@ public class EditDistance {
         return Math.min(a, Math.min(b, c));
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String str1 = "sunday";
         String str2 = "saturday";
 

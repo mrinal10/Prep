@@ -1,7 +1,7 @@
 package gfg.ds.algo;
 
 public class Largest_sum_contiguous_subarray {
-    static int maxSubArraySum(int a[]) {
+    static int maxSubArraySum(int[] a) {
         int max_so_far = Integer.MIN_VALUE;
         int max_ending_here = 0;
 

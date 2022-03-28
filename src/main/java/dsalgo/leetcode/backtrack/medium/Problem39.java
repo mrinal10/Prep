@@ -40,7 +40,7 @@ public class Problem39 {
             for(Integer candidate : candidates) {
                 System.out.print(candidate+" ");
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 

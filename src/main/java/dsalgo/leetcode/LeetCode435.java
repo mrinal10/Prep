@@ -16,7 +16,7 @@ public class LeetCode435 {
             return 0;
         }
         Arrays.sort(intervals, new myComparator());
-        int dp[] = new int[intervals.length];
+        int[] dp = new int[intervals.length];
         dp[0] = 1;
         int ans = 1;
         for (int i = 1; i < dp.length; i++) {

@@ -22,9 +22,9 @@ public class Reverse_array {
         reverseArray(ar, start+1, end-1);
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
-        Integer arr[] = {1, 2, 3, 4, 5, 6, 7};
+        Integer[] arr = {1, 2, 3, 4, 5, 6, 7};
         printArray(arr);
         reverseArray(arr, 0, arr.length-1);
         System.out.print("Reversed array is \n");

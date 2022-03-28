@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class LongestIncreasingSubsequence {
 
-    static int lis(int arr[], int n) {
+    static int lis(int[] arr, int n) {
        if(n==0 || n==1) {
            return n;
        }

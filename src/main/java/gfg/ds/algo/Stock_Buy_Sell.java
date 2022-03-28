@@ -2,7 +2,7 @@ package gfg.ds.algo;
 
 public class Stock_Buy_Sell {
 
-    static int maximizeProfit(int price[], int start, int end) {
+    static int maximizeProfit(int[] price, int start, int end) {
         if(end <= start) {
             return 0;
         }
@@ -24,7 +24,7 @@ public class Stock_Buy_Sell {
     }
 
     public static void main(String[] args) {
-        int price[] = { 100, 180, 260, 310,
+        int[] price = { 100, 180, 260, 310,
                 40, 535, 695 };
         int n = price.length;
 
