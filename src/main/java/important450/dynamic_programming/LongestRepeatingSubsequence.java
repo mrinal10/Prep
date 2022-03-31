@@ -1,6 +1,7 @@
 package important450.dynamic_programming;
 
 public class LongestRepeatingSubsequence {
+
     public int longestRepeatingSubsequence(String str) {
 
         int n = str.length();

@@ -5,7 +5,9 @@ import java.util.Map;
 
 //also : leetcode 518
 public class CoinChange {
+
     Map<String, Integer> map;
+
     public long change(int amount, int[] coins) {
         map = new HashMap<>();
         return countDP(coins, coins.length, amount);

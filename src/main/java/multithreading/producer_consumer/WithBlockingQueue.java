@@ -8,7 +8,7 @@ class ProducerImpl implements Runnable {
     private final BlockingQueue<Integer> queue;
     private volatile int index;
 
-    public ProducerImpl(BlockingQueue q, int ii){
+    public ProducerImpl(BlockingQueue<Integer> q, int ii){
         queue = q;
         index = ii;
     }
@@ -62,11 +62,9 @@ public class WithBlockingQueue {
         ConsumerImpl c1 = new ConsumerImpl(bQueue);
 
         Thread producerThread = new Thread(p1, "producer_1");
-        Thread producerThread2 = new Thread(p1, "producer_2");
         Thread consumerThread = new Thread(c1);
 
         producerThread.start();
-        producerThread2.start();
         consumerThread.start();
     }
 }
