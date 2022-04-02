@@ -6,13 +6,13 @@ public class Egnyte2 {
     Map<Integer, List<Integer>> graph;
     Set<Integer> visited;
     public boolean solution(int[] from, int[] to) {
-        graph = new HashMap<Integer, List<Integer>>();
+        graph = new HashMap<>();
         visited = new HashSet<>();
         int numberOfNodes = from.length;
 
         for (int i = 0; i < numberOfNodes; i++) {
             int fromIndex = from[i];
-            List<Integer> ll = new ArrayList<Integer>();
+            List<Integer> ll = new ArrayList<>();
             if(graph.containsKey(fromIndex)) {
                 ll = graph.get(fromIndex);
             }
