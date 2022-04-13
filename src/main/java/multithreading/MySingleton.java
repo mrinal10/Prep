@@ -1,3 +1,4 @@
+package multithreading;
 
 public class MySingleton {
     private static MySingleton obj = null;
@@ -13,15 +14,5 @@ public class MySingleton {
         }
 
         return obj;
-    }
-}
-
-class Test {
-
-    public static void main(String[] args) {
-        for (int i = 0; i<100; i++) {
-            MySingleton newSingleton = MySingleton.getObject();
-            System.out.println(newSingleton.hashCode());
-        }
     }
 }

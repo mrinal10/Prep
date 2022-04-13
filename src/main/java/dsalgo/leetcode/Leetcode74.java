@@ -8,7 +8,7 @@ public class Leetcode74 {
         while (start <= end) {
             int mid = (start + end) / 2;
 
-            int midRow = mid /matrix[0].length;
+            int midRow = mid / matrix[0].length;
             int midColumn = mid % matrix[0].length;
 
             int midvalue = matrix[midRow][midColumn];
