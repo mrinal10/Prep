@@ -1,20 +1,20 @@
 package multithreading;
 
-class Node {
+class Node<T> {
 
-    private int data;
+    private T data;
     private Node nextNode;
 
-    Node(int d) {
+    Node(T d) {
         data = d;
         nextNode = null;
     }
 
-    public int getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(T data) {
         this.data = data;
     }
 
@@ -27,15 +27,12 @@ class Node {
     }
 }
 
-public class BlockingQueue {
+public class BlockingQueue<T> {
     private Node front;
     private Node rear;
     private int length;
 
-    public BlockingQueue(){
-    }
-
-    public synchronized void put(int data) throws InterruptedException {
+    public synchronized void put(T data) throws InterruptedException {
         System.out.println("put method called...");
         if(this.length > 9){
             System.out.println("Maximum capacity reached. Hence waiting for take() operation");
@@ -53,15 +50,15 @@ public class BlockingQueue {
         notifyAll();
     }
 
-    public synchronized int take() throws InterruptedException {
+    public synchronized T take() throws InterruptedException {
         System.out.println("take() method called");
-        int data;
+        T data;
         if(isEmpty()){
             System.out.println("No data found in the queue. take()() method execution paused.");
             wait();
         }
         System.out.println("Data became available. take() method resumed.");
-        data = front.getData();
+        data = (T) front.getData();
         front = front.getNextNode();
         length--;
         return data;
