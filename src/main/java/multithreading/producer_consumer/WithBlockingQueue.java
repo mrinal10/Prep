@@ -39,6 +39,7 @@ class ConsumerImpl implements Runnable {
     }
 
     int taken = -1;
+
     @Override
     public void run() {
         while (true) {
