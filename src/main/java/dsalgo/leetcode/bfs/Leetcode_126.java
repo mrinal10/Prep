@@ -97,9 +97,7 @@ class Leetcode_126 {
                 }
             }
             for (String currWord : forwardQueue) {
-                if (wordList.contains(currWord)) {
-                    wordList.remove(currWord);
-                }
+                wordList.remove(currWord);
             }
             if (found) break;
 

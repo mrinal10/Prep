@@ -16,6 +16,4 @@ public class Reverse_recursive {
         cur.next = head;
         return newHead;
     }
-
-
 }

@@ -2,7 +2,7 @@ package dsalgo.leetcode;
  class GFG {
 
     // initializing the matrix.
-    static int dp[][] = new int[8][8];
+    static int[][] dp = new int[8][8];
 
     static int getsteps(int x, int y,
             int tx, int ty) {
