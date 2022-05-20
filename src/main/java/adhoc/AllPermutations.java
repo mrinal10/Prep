@@ -37,6 +37,7 @@ public class AllPermutations {
         String s = "aabb";
         AllPermutations apm = new AllPermutations();
         apm.gen(s);
+
     }
 
 }
