@@ -3,6 +3,7 @@ package multithreading.producer_consumer;
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO need modification
 public class ProducerConsumer {
     List<String> jobList = new ArrayList<>();
     int counter = 1;
@@ -51,7 +52,7 @@ public class ProducerConsumer {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         limit = 300;
         ProducerConsumer mt = new ProducerConsumer();
 
@@ -61,5 +62,8 @@ public class ProducerConsumer {
 
         producer.start();
         consumer.start();
+
+        producer.join();
+        consumer.join();
     }
 }

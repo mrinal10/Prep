@@ -1,6 +1,7 @@
 package adhoc;
 
 
+import java.time.Instant;
 import java.util.*;
 
 class Employee{
@@ -93,13 +94,7 @@ public class Test {
         }*/
 
 
-        try {
-            int[] a = new int[5];
-            a[5] = 1;
-        } catch (Exception e) {
-
-            System.out.println("out of bound");
-        }
+        System.out.println("Current epoch timestamp in millis: " + Instant.now().toEpochMilli());
 
     }
 }
