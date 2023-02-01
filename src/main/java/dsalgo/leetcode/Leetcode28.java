@@ -21,7 +21,7 @@ public class Leetcode28 {
         	String startString = haystack.substring(i, needleLength);
         	
         	if(startString.equals(needle)) {
-        		startStringIndex = i;
+        		startStringIndex = i; 
         	}
         }
         return startStringIndex;
