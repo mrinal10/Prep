@@ -43,8 +43,9 @@ public class WordBreak {
             for (int startIndex = 0; startIndex < endIndex; ++startIndex) {
                 String word = s.substring(startIndex, endIndex);
                 if (wordSet.contains(word))
-                    for (String subsentence : dp.get(startIndex))
-                        sublist.add((subsentence + " " + word).strip());
+                    for (String subsentence : dp.get(startIndex)) {
+//                        sublist.add((subsentence + " " + word).strip());
+                    }
             }
             dp.set(endIndex, sublist);
         }

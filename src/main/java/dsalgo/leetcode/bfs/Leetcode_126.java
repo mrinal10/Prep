@@ -122,7 +122,7 @@ class Leetcode_126 {
     public static void main(String[] args) {
         String beginWord = "hit";
         String endWord = "cog";
-        List<String> wordList = List.of("hot","dot","dog","lot","log","cog");
+        List<String> wordList = null;//List.of("hot","dot","dog","lot","log","cog");
         Leetcode_126 ans = new Leetcode_126();
 
         System.out.println(ans.findLadders(beginWord, endWord, wordList));
