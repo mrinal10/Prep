@@ -9,9 +9,7 @@ import java.util.concurrent.*;
 public class Singleton {
     static Singleton singletonObject;
 
-    private Singleton() {
-
-    }
+    private Singleton() {}
 
     public static Singleton getInstance() {
         if(singletonObject == null) {
@@ -29,10 +27,10 @@ public class Singleton {
 class TestSingleton {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        ExecutorService executorService = Executors.newFixedThreadPool(100);
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
         List<Callable<String>> callableTasks = new ArrayList<>();
-        int numberOfThreads = 5000;
-        while(numberOfThreads-- > 0) {
+        int numberOfObjects = 5000;
+        while(numberOfObjects-- > 0) {
             Callable<String> callableTask = () -> {
                 Singleton mySingleton = Singleton.getInstance();
                 return ("hashcode : " + mySingleton.hashCode());
@@ -42,7 +40,12 @@ class TestSingleton {
         List<Future<String>> futures = executorService.invokeAll(callableTasks);
 
         for(Future<String> future : futures) {
-            System.out.println("futures : "+future.get());
+            try {
+                Thread.sleep(700);
+                System.out.println("futures : " + future.get());
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }

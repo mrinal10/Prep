@@ -10,11 +10,11 @@ public class ProducerConsumer_blockingQ {
             public void run() {
                 try {
                     for (int i = 0; i < 50; i++) {
-                        q.enqueue(new Integer(i));
+                        q.enqueue(i);
                         System.out.println("enqueued " + i);
                     }
                 } catch (InterruptedException ie) {
-
+                    ie.printStackTrace();
                 }
             }
         });
@@ -28,7 +28,7 @@ public class ProducerConsumer_blockingQ {
                         System.out.println("Thread 2 dequeued: " + q.dequeue());
                     }
                 } catch (InterruptedException ie) {
-
+                    ie.printStackTrace();
                 }
             }
         });
@@ -42,7 +42,7 @@ public class ProducerConsumer_blockingQ {
                         System.out.println("Thread 3 dequeued: " + q.dequeue());
                     }
                 } catch (InterruptedException ie) {
-
+                    ie.printStackTrace();
                 }
             }
         });
@@ -63,7 +63,7 @@ public class ProducerConsumer_blockingQ {
 class BlockingQueue<T> {
 
     T[] array;
-    Object lock = new Object();
+    final Object lock = new Object();
     int size = 0;
     int capacity;
     int head = 0;

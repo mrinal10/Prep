@@ -32,9 +32,15 @@ public class BlockingQueue<T> {
     private Node rear;
     private int length;
 
+    private final int maxCapacity;
+
+    BlockingQueue(int cap) {
+        maxCapacity = cap;
+    }
+
     public synchronized void put(T data) throws InterruptedException {
         System.out.println("put method called...");
-        if(this.length > 9){
+        if(this.length > maxCapacity){
             System.out.println("Maximum capacity reached. Hence waiting for take() operation");
             wait();
         }
@@ -54,7 +60,7 @@ public class BlockingQueue<T> {
         System.out.println("take() method called");
         T data;
         if(isEmpty()){
-            System.out.println("No data found in the queue. take()() method execution paused.");
+            System.out.println("No data found in the queue. take() method execution paused.");
             wait();
         }
         System.out.println("Data became available. take() method resumed.");
@@ -64,29 +70,27 @@ public class BlockingQueue<T> {
         return data;
     }
 
-    public boolean isEmpty(){
+    private boolean isEmpty(){
         return length == 0;
     }
 
     public static void main(String[] args) throws InterruptedException {
-        BlockingQueue queue = new BlockingQueue();
+        BlockingQueue<Integer> queue = new BlockingQueue<>(9);
 
-            new Thread(() -> {
-                try {
-                    queue.take();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }).start();
+        new Thread(() -> {
+            try {
+                queue.take();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
 
-
-            new Thread(() -> {
-                try {
-                    queue.put(4);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }).start();
-
+        new Thread(() -> {
+            try {
+                queue.put(4);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 }

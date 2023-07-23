@@ -1,7 +1,7 @@
-package design.observer;
+package designpattern.observer;
 
-import design.observer.impl.MyTopic;
-import design.observer.impl.MyTopicSubscriber;
+import designpattern.observer.impl.MyTopic;
+import designpattern.observer.impl.MyTopicSubscriber;
 
 public class Driver {
 
@@ -29,5 +29,9 @@ public class Driver {
 
         //now send message to subject
         topic.postMessage("New Message");
+
+        topic.unregister(obj1);
+
+        topic.postMessage("New Message 2");
     }
 }

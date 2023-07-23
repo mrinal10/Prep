@@ -1,2 +1,4 @@
-package blind.curated;public class Trie {
+package blind.curated;
+
+public class Trie {
 }

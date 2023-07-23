@@ -1,7 +1,7 @@
-package design.observer.impl;
+package designpattern.observer.impl;
 
-import design.observer.Observer;
-import design.observer.Subject;
+import designpattern.observer.Observer;
+import designpattern.observer.Subject;
 
 public class MyTopicSubscriber implements Observer {
 
