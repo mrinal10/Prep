@@ -42,9 +42,7 @@ public class SubtreeOfANotherTree {
             if(treeNode.right != null)
                 q.add(treeNode.right);
         }
-        StringBuilder sb = new StringBuilder();
-//        sb.replace();
-//        Collections.binarySearch()
+
         return isEqual;
     }
 
