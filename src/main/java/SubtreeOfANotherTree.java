@@ -36,6 +36,7 @@ public class SubtreeOfANotherTree {
             if(isEqual) {
                 return isEqual;
             }
+
             if(treeNode.left != null)
                 q.add(treeNode.left);
             if(treeNode.right != null)
