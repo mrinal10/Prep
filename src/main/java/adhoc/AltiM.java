@@ -1,9 +1,6 @@
 package adhoc;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Given the arrival and departure times of all trains that reach a railway station,
