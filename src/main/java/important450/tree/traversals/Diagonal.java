@@ -10,7 +10,7 @@ public class Diagonal {
     static TreeMap<Integer, List<String>> output;
     static final TreeMap<Integer, List<String>> diagonalPrint(Node root) {
 
-        output = new TreeMap();
+        output = new TreeMap<>();
         diagonalPrintUtil(root, 0);
         return output;
     }
@@ -21,7 +21,7 @@ public class Diagonal {
             return;
         }
 
-        List<String> ll = new ArrayList();
+        List<String> ll = new ArrayList<>();
         if(output.containsKey(level)) {
             ll = output.get(level);
         }

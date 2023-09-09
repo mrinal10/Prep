@@ -3,7 +3,6 @@ package multithreading.producer_consumer;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO need modification
 public class ProducerConsumer {
     List<String> jobList = new ArrayList<>();
     int counter = 1;

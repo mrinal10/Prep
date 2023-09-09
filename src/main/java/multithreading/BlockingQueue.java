@@ -3,7 +3,7 @@ package multithreading;
 class Node<T> {
 
     private T data;
-    private Node nextNode;
+    private Node<T> nextNode;
 
     Node(T d) {
         data = d;
@@ -18,18 +18,18 @@ class Node<T> {
         this.data = data;
     }
 
-    public Node getNextNode() {
+    public Node<T> getNextNode() {
         return nextNode;
     }
 
-    public void setNextNode(Node nextNode) {
+    public void setNextNode(Node<T> nextNode) {
         this.nextNode = nextNode;
     }
 }
 
 public class BlockingQueue<T> {
-    private Node front;
-    private Node rear;
+    private Node<T> front;
+    private Node<T> rear;
     private int length;
 
     private final int maxCapacity;
@@ -44,7 +44,7 @@ public class BlockingQueue<T> {
             System.out.println("Maximum capacity reached. Hence waiting for take() operation");
             wait();
         }
-        Node node = new Node(data);
+        Node<T> node = new Node<T>(data);
         if(isEmpty()){
             front = node;
         }else {

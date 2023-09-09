@@ -1,9 +1,8 @@
 package designpattern.observer;
 
-public interface Observer {
+public abstract class Observer {
+    
+    protected Subject subject;
 
-    //to be used by subject
-    public void update();
-    public void setSubject(Subject sub);
-
+    public abstract void update();
 }

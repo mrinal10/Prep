@@ -4,7 +4,7 @@ import java.util.Map;
 public class LongestSubstringWithourNonRepeatingCharacter {
 
     public int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> map = new HashMap();
+        Map<Character, Integer> map = new HashMap<>();
         
         int length = 0;
         int startIndex = 0;

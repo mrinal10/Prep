@@ -16,7 +16,9 @@ return mid;
 
     public static void main(String[] args) {
         int[] arr = {1, 3, 5, 5, 5, 5, 67, 123, 125};
+        findFirst(arr, 0, 0, 0);
+        findLast(arr, 0, 0, 0);
         int x = 5;
-
+        System.out.println(x);
     }
 }

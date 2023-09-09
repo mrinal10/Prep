@@ -6,7 +6,7 @@ import java.util.Map;
 public class LCS {
     static int lcs(int m, int n, String s1, String s2) {
         Map<String, Integer> lookup = new HashMap<String, Integer>();
-        //return lcsOptimized(m-1, n-1, s1, s2, lookup);
+        lcsOptimized(m-1, n-1, s1, s2, lookup);
         return lcsDp(m, n, s1, s2);
     }
 

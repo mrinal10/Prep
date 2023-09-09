@@ -1,6 +1,5 @@
 package blind.curated;
 
-import java.util.List;
 
 class ListNode {
      int val;
@@ -69,7 +68,7 @@ public class L143 {
         ListNode n8 = new ListNode(8);
         ListNode n9 = new ListNode(9);
 
-
+    
 
         n1.next = n2;
         n2.next = n3;

@@ -2,17 +2,17 @@ package important450.tree.view;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.Set;
+import java.util.*;
 import important450.tree.Node;
 
 public class LeftView {
 
     LinkedHashMap<Integer, Integer> map;
-    ArrayList<Integer> leftView(Node root) {
+    List<Integer> leftView(Node root) {
 
         map = new LinkedHashMap<>();
         leftViewUtil(root, 0);
-        ArrayList<Integer> rightView = new ArrayList();
+        List<Integer> rightView = new ArrayList<Integer>();
 
         Set<Integer> keySet = map.keySet();
         for(Integer key : keySet) {

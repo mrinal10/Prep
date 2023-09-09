@@ -8,7 +8,7 @@ public class LevelOrderTraversal {
 
     static ArrayList<Integer> levelOrder(Node node) {
 
-        ArrayList<Integer> list = new ArrayList();
+        ArrayList<Integer> list = new ArrayList<>();
         Queue<Node> q = new LinkedList<>();
         q.add(node);
         while (!q.isEmpty()) {

@@ -20,7 +20,7 @@ public class GroupAnagram {
 
             groups.put(convertedString, list);
         }
-        List<List<String>> ans = new ArrayList();
+        List<List<String>> ans = new ArrayList<>();
         for(String key : groups.keySet()) {
 
             ans.add(groups.get(key));
@@ -49,6 +49,7 @@ public class GroupAnagram {
     public static void main(String[] args) {
         String[] strs = {"eat","tea","tan","ate","nat","bat"};
 
-
+        GroupAnagram groupAnagram = new GroupAnagram();
+        groupAnagram.groupAnagrams(strs);
     }
 }

@@ -18,7 +18,7 @@ public class RightView {
     ArrayList<Integer> rightView(Node root) {
 
         map = new LinkedHashMap<>();
-        Queue<QNode> q = new LinkedList();
+        Queue<QNode> q = new LinkedList<QNode>();
         QNode qnode = new QNode(root, 0);
         q.add(qnode);
 
@@ -39,7 +39,7 @@ public class RightView {
             }
         }
 
-        ArrayList<Integer> rightView = new ArrayList();
+        ArrayList<Integer> rightView = new ArrayList<>();
 
         Set<Integer> keySet = map.keySet();
         for(Integer key : keySet) {

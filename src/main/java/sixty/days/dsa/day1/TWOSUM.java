@@ -7,7 +7,7 @@ public class TWOSUM {
 
     public int[] twoSum(int[] nums, int target) {
         int[] ans = new int[2];
-        Map<Integer, Integer> numMap = new HashMap();
+        Map<Integer, Integer> numMap = new HashMap<Integer, Integer>();
         for(int i=0; i< nums.length; i++) {
             int complement = target - nums[i];
             if(numMap.containsKey(complement)) {
@@ -16,6 +16,7 @@ public class TWOSUM {
                 numMap.put(nums[i], i);
             }
         }
+        System.out.println(ans);
         throw new IllegalStateException("No Data Found");
     }
 

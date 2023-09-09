@@ -159,5 +159,9 @@ return null;
         return null;
     }
 
+    public static void main(String[] args) throws IOException {
+        getUserTransaction(0, null);
+    }
+
 }
 

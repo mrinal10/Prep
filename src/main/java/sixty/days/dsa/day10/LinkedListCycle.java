@@ -1,6 +1,5 @@
 package sixty.days.dsa.day10;
 
-import java.util.List;
 
 class ListNode {
      int val;

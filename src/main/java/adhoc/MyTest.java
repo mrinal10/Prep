@@ -1,7 +1,6 @@
 package adhoc;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 class LRUCache {
 
@@ -32,7 +31,7 @@ class LRUCache {
         tail.prev = head;
 
         int[] nums = {1,2,3};
-        List<Integer> ll = new ArrayList();
+        List<Integer> ll = new ArrayList<>();
         Arrays.stream(nums).forEach(x -> ll.add(x*x));
         ll.toArray();
     }

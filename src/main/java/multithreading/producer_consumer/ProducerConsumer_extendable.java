@@ -16,10 +16,10 @@ class Message {
 
 class QueueProducer implements Runnable {
 
-    private final BlockingQueue dataQueue;
+    private final BlockingQueue<Message> dataQueue;
     private volatile boolean runFlag;
 
-    public QueueProducer(BlockingQueue dQueue) {
+    public QueueProducer(BlockingQueue<Message> dQueue) {
         this.dataQueue = dQueue;
         runFlag = true;
     }

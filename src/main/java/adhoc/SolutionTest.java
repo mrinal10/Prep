@@ -37,7 +37,7 @@ public class SolutionTest {
             int m, int[] appVisits) {
         // Write your code here
         int result = 0;
-        List<String> switchList = new ArrayList();
+        List<String> switchList = new ArrayList<>();
         int i = 0;
         int j = 0;
 

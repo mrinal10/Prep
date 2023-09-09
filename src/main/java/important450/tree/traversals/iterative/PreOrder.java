@@ -10,7 +10,7 @@ public class PreOrder {
             return;
         }
 
-        Stack<Node> stack = new Stack();
+        Stack<Node> stack = new Stack<>();
 
         stack.push(root);
         while (!stack.isEmpty()) {

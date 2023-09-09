@@ -7,7 +7,7 @@ import important450.tree.Node;
 public class ZigZagTraversal {
 
     ArrayList<Integer> zigZagTraversal(Node root) {
-        ArrayList<Integer> ans = new ArrayList();
+        ArrayList<Integer> ans = new ArrayList<>();
         if (root == null) {
             return null;
         }
