@@ -11,3 +11,6 @@
 .idea/sonarlint/issuestore/1/5/15618b4c612761757aea590399ad2e22f65f368b
 .idea/runConfigurations.xml
 *.class
+*.json
+*.gradle
+*.gradle
