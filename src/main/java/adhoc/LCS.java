@@ -6,7 +6,6 @@ import java.util.Map;
 public class LCS {
     static int lcs(int m, int n, String s1, String s2) {
         Map<String, Integer> lookup = new HashMap<String, Integer>();
-        lcsOptimized(m-1, n-1, s1, s2, lookup);
         return lcsDp(m, n, s1, s2);
     }
 
@@ -31,7 +30,7 @@ public class LCS {
             return 0;
         }
 
-        String key = m + "}" + n;
+        String key = m + "_" + n;
 
         if (!lookup.containsKey(key)) {
            if (s1.charAt(m) == s2.charAt(n)) {
@@ -55,5 +54,15 @@ public class LCS {
         }
 
         return Math.max(lcsUtil(m-1, n, s1, s2), lcsUtil(m, n-1, s1, s2));
+    }
+
+
+    public static void main(String[] args) {
+        String s1 = "ZXVVYZW";
+        String s2 = "XKYKZPW";
+
+        System.out.println(lcs(s1.length(), s2.length(), s1, s2));
+
+        System.out.println("optimized:"+lcsUtil(s1.length()-1, s2.length()-1, s1, s2));
     }
 }
